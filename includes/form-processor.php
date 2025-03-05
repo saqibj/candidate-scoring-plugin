@@ -8,6 +8,9 @@ function csp_handle_form_submission() {
     // Validate ratings
     $valid_ratings = [1, 2, 3, 4, 5];
     foreach (['core_competencies', 'role_specific_skills', 'behavioral_attributes'] as $section) {
+        if (!isset($_POST[$section]) || !is_array($_POST[$section])) {
+            wp_die('Invalid form data structure');
+        }
         foreach ($_POST[$section] as $category => $values) {
             if (!in_array($values['rating'], $valid_ratings)) {
                 wp_die('Invalid rating value for ' . $category);

@@ -54,5 +54,7 @@ function csp_admin_assets($hook) {
 
 // Admin page renderer
 function csp_admin_page_display() {
+    ob_start();
     include CSP_PLUGIN_DIR . 'admin/partials/admin-display.php';
+    echo ob_get_clean();
 }

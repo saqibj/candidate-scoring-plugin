@@ -19,7 +19,7 @@ class CSP_DB_Handler {
             overall_recommendation varchar(50) NOT NULL,
             strengths text NOT NULL,
             PRIMARY KEY  (id)
-        ) $charset_collate; ENGINE=InnoDB";
+        ) ENGINE=InnoDB $charset_collate";
 
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($sql);
