@@ -3,7 +3,7 @@
     
     <?php settings_errors(); ?>
     
-    <form method="post" action="">
+    <form method="post" action="<?php echo admin_url('admin-post.php'); ?>">
         <?php wp_nonce_field('csp_score_nonce'); ?>
         
         <!-- Basic Info Section -->
